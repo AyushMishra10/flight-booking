@@ -1,0 +1,99 @@
+.search-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.search-card {
+  background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
+  color: white;
+}
+
+.search-card .mat-mdc-card-title {
+  color: white;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.form-row mat-form-field {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Keep Material input text visible on the blue background */
+.form-row .mat-mdc-form-field-infix {
+  color: white !important;
+}
+
+.form-row .mdc-text-field--outlined .mdc-notched-outline__leading,
+.form-row .mdc-text-field--outlined .mdc-notched-outline__notch,
+.form-row .mdc-text-field--outlined .mdc-notched-outline__trailing {
+  border-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.form-row .mat-mdc-form-field-label {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.results-container {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.flight-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  transition: transform 0.2s;
+}
+
+.flight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flight-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.flight-number {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #1565c0;
+}
+
+.route {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.time {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.flight-price {
+  text-align: right;
+}
+
+.flight-price .amount {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #2e7d32;
+}

@@ -1,0 +1,53 @@
+<div class="search-container">
+  <mat-card class="search-card">
+    <mat-card-header>
+      <mat-card-title>Find Your Flight</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>From</mat-label>
+          <input matInput [(ngModel)]="origin" placeholder="e.g., KUL">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>To</mat-label>
+          <input matInput [(ngModel)]="destination" placeholder="e.g., DMK">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="onSearch()" [disabled]="isLoading()">
+          {{ isLoading() ? 'Searching...' : 'Search Flights' }}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Loading Spinner -->
+  @if (isLoading()) {
+    <div class="loading-spinner">
+      <mat-spinner diameter="40"></mat-spinner>
+    </div>
+  }
+
+  <!-- Results List -->
+  @if (flights().length > 0 && !isLoading()) {
+    <div class="results-container">
+      @for (flight of flights(); track flight.id) {
+        <mat-card class="flight-card">
+          <mat-card-content>
+            <div class="flight-details">
+              <span class="flight-number">{{ flight.flightNumber }}</span>
+              <span class="route">{{ flight.origin }} ➔ {{ flight.destination }}</span>
+              <span class="time">{{ flight.departureTime | date:'short' }}</span>
+            </div>
+            <div class="flight-price">
+              <span class="currency">MYR</span>
+              <span class="amount">{{ flight.price }}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  }
+</div>
