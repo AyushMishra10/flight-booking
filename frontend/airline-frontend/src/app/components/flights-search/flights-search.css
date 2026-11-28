@@ -54,16 +54,21 @@
 }
 
 .flight-card {
+  background: #ffffff;
+  border-left: 10px solid #1565c0;   /* premium accent */
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.flight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+/* THE FIX: flex must be on the content wrapper */
+.flight-card mat-card-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
-  transition: transform 0.2s;
-}
-
-.flight-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 98%;
 }
 
 .flight-details {
